@@ -100,6 +100,17 @@ class BST:
                     prev.left = current.right
                 else:
                     prev.right = current.right
+            else:
+                c2 = current
+                p2 = current.left
+                while p2.right != None:
+                    c2 = p2
+                    p2 = c2.right
+                current.data = p2.data
+                if c2.left == p2:
+                    c2.left = p2.left
+                else:
+                    c2.right = p2.left
             # elif current.left == None and current.right == None:
             #     c2 = self.root
             #     p2 = None
